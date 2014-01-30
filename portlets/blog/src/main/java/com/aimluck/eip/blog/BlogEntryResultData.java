@@ -19,6 +19,8 @@
 
 package com.aimluck.eip.blog;
 
+import info.bliki.wiki.model.WikiModel;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -179,7 +181,8 @@ public class BlogEntryResultData implements ALData {
    * @return
    */
   public String getNote() {
-    return ALEipUtils.getMessageList(note.getValue());
+    WikiModel model = new WikiModel("", "");
+    return model.render(note.getValue());
   }
 
   /**
